@@ -8,6 +8,9 @@ export class PostComponent extends LitElement {
         postedTime: { type: String },
         numberOfAnswers: { type: Number },
         profilePictureUrl: { type: String },
+
+        title: { type: String },
+        content: { type: String },
     };
 
     static styles = css`
@@ -20,9 +23,12 @@ export class PostComponent extends LitElement {
         this.status = "";
         this.userName = "";
         this.postedTime = "";
-        this.numberOfAnswers = 0;
         this.profilePictureUrl = "";
 
+        this.numberOfAnswers = 0;
+
+        this.title = "";
+        this.content = "";
     }
 
     render() {
@@ -34,6 +40,11 @@ export class PostComponent extends LitElement {
                 .numberOfAnswers=${this.numberOfAnswers}
                 .profilePictureUrl=${this.profilePictureUrl}
             ></header-component>
+            
+            <content-component
+                .title=${this.title}
+                .content=${this.content}
+            ></content-component>
         `;
     }
 }
