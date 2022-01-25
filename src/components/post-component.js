@@ -11,6 +11,7 @@ export class PostComponent extends LitElement {
 
         title: { type: String },
         content: { type: String },
+        tags: { type: Array },
     };
 
     static styles = css`
@@ -29,6 +30,7 @@ export class PostComponent extends LitElement {
 
         this.title = "";
         this.content = "";
+        this.tags = [];
     }
 
     render() {
@@ -44,6 +46,7 @@ export class PostComponent extends LitElement {
             <content-component
                 .title=${this.title}
                 .content=${this.content}
+                .tags=${this.tags}
             ></content-component>
         `;
     }

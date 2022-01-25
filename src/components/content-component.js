@@ -5,6 +5,7 @@ export class ContentComponent extends LitElement {
     static properties = {
         title: { type: String },
         content: { type: String },
+        tags: { type: Array },
     };
 
     static styles = css`
@@ -41,6 +42,14 @@ export class ContentComponent extends LitElement {
         .content {
             color: grey;
         }
+
+        .tags {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-left: 11.5%;
+            margin-top: 2%;
+        }
     `;
 
     constructor() {
@@ -48,6 +57,7 @@ export class ContentComponent extends LitElement {
 
         this.title = "";
         this.content = "";
+        this.tags = [];
     }
 
     render() {
@@ -60,6 +70,14 @@ export class ContentComponent extends LitElement {
                     <p class="title">${this.title}</p>
                     <p class="content">${this.content}</p>
                 </div>
+            </div>
+            <div class="tags">
+                ${this.tags.map(text => html`
+                    <tag-component
+                        .text=${text}
+                    >
+                    </tag-component>
+                `)}
             </div>
         `;
     }

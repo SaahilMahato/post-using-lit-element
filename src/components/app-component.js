@@ -8,6 +8,7 @@ export class AppComponent extends LitElement {
     static styles = css`
         .container {
             width: 50vw;
+            margin: 0 auto;
         }
     `;
 
@@ -24,8 +25,7 @@ export class AppComponent extends LitElement {
 
                 title: "How do we add new containers to project?",
                 content: "Lorem ipsum dolor sit amet, vel error alienum sententiae in, laudem insolens definitiones ad nec. Doctus malorum labores vel ne. Cu est euismod eruditi, altera aeterno consulatu quo no. Nulla facilisi maluisset mei at. Cu bonorum vivendum has, dico accusamus ut duo.",
-
-
+                tags: ["ACS", "Assays"],
             },
         ];
     }
@@ -34,7 +34,6 @@ export class AppComponent extends LitElement {
         return html`
             <div class="container">
                 ${this.posts.map(post => html`
-                    
                     <post-component
                         .status=${post.status}
                         .userName=${post.userName}
@@ -43,6 +42,7 @@ export class AppComponent extends LitElement {
                         .profilePictureUrl=${post.profilePictureUrl}
                         .title=${post.title}
                         .content=${post.content}
+                        .tags=${post.tags}
                     >
                     </post-component>
                 `)}
