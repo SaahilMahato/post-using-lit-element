@@ -62,22 +62,24 @@ export class ContentComponent extends LitElement {
 
     render() {
         return html`
-            <div class="main">
-                <div class="img-container">
-                    <img class="flag" src="./src/images/flag.png">
+            <div class="content-wrapper">
+                <div class="main">
+                    <div class="img-container">
+                        <img class="flag" src="./src/images/flag.png">
+                    </div>
+                    <div class="text">
+                        <p class="title">${this.title}</p>
+                        <p class="content">${this.content}</p>
+                    </div>
                 </div>
-                <div class="text">
-                    <p class="title">${this.title}</p>
-                    <p class="content">${this.content}</p>
+                <div class="tags">
+                    ${this.tags.map(text => html`
+                        <tag-component
+                            .text=${text}
+                        >
+                        </tag-component>
+                    `)}
                 </div>
-            </div>
-            <div class="tags">
-                ${this.tags.map(text => html`
-                    <tag-component
-                        .text=${text}
-                    >
-                    </tag-component>
-                `)}
             </div>
         `;
     }

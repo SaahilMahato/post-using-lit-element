@@ -8,6 +8,7 @@ export class HeaderComponent extends LitElement {
         postedTime: { type: String },
         numberOfAnswers: { type: Number },
         profilePictureUrl: { type: String },
+        viewerProfilePicUrls: { type: Array },
     }
 
     static styles = css`
@@ -75,6 +76,23 @@ export class HeaderComponent extends LitElement {
             padding: 0 2%;
             border-radius: 10px;
         }
+
+        .right-side {
+            width: 21%;
+        }
+
+        .viewers {
+            position: relative;
+        }
+
+        .viewer-pic {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: solid 2px white;
+            cursor: pointer;
+        }
     `;
 
     constructor() {
@@ -85,6 +103,7 @@ export class HeaderComponent extends LitElement {
         this.postedTime = "";
         this.numberOfAnswers = 0;
         this.profilePictureUrl = "";
+        this.viewerProfilePicUrls = [];
     }
 
     render() {
@@ -111,6 +130,22 @@ export class HeaderComponent extends LitElement {
                 </div>
 
                 <div class="right-side">
+                    <div class="viewers">
+                        ${this.viewerProfilePicUrls.map((imgSource, index) => html`
+                            <img class="viewer-pic"
+                                .src=${imgSource}
+                                style="left: ${index*26}px"
+                            >
+                        `)}
+                        <img class="viewer-pic"
+                            src="./src/images/3_dots_icon.jpeg"
+                            style="left: ${4*26}px"
+                        >
+                        <img class="viewer-pic"
+                            src="./src/images/3_dots_vertical.png"
+                            style="left: ${6*26}px"
+                        >
+                    </div>
                 </div>
 
             </div>

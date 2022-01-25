@@ -8,6 +8,7 @@ export class PostComponent extends LitElement {
         postedTime: { type: String },
         numberOfAnswers: { type: Number },
         profilePictureUrl: { type: String },
+        viewerProfilePicUrls: { type: Array },
 
         title: { type: String },
         content: { type: String },
@@ -15,7 +16,12 @@ export class PostComponent extends LitElement {
     };
 
     static styles = css`
-        
+        .post-wrapper {
+            background-color: white;
+            margin: 10px 0;
+            padding: 2%;
+            border-radius: 5px;
+        }
     `;
 
     constructor() {
@@ -25,6 +31,7 @@ export class PostComponent extends LitElement {
         this.userName = "";
         this.postedTime = "";
         this.profilePictureUrl = "";
+        this.viewerProfilePicUrls = [];
 
         this.numberOfAnswers = 0;
 
@@ -35,19 +42,22 @@ export class PostComponent extends LitElement {
 
     render() {
         return html`
-            <header-component
-                .status=${this.status}
-                .userName=${this.userName}
-                .postedTime=${this.postedTime}
-                .numberOfAnswers=${this.numberOfAnswers}
-                .profilePictureUrl=${this.profilePictureUrl}
-            ></header-component>
-            
-            <content-component
-                .title=${this.title}
-                .content=${this.content}
-                .tags=${this.tags}
-            ></content-component>
+            <div class="post-wrapper">
+                <header-component
+                    .status=${this.status}
+                    .userName=${this.userName}
+                    .postedTime=${this.postedTime}
+                    .numberOfAnswers=${this.numberOfAnswers}
+                    .profilePictureUrl=${this.profilePictureUrl}
+                    .viewerProfilePicUrls=${this.viewerProfilePicUrls}
+                ></header-component>
+                
+                <content-component
+                    .title=${this.title}
+                    .content=${this.content}
+                    .tags=${this.tags}
+                ></content-component>
+            </div>
         `;
     }
 }
