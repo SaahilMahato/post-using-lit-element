@@ -54,6 +54,7 @@ export class HeaderComponent extends LitElement {
         .user-name {
             font-weight: bold;
             margin: 0;
+            margin-top: 1%;
         }
 
         .time-content {

@@ -8,11 +8,12 @@ export class TagComponent extends LitElement {
 
     static styles = css`
         .tag {
+            display: inline-block;
             background-color: lightgrey;
             border: solid 2px grey;
             border-radius: 20px;
-            padding: 2%;
-            min-width: 80px;
+            padding: 0.5%;
+            min-width: 50px;
             margin-right: 20px;
         }
 

@@ -15,7 +15,7 @@ export class ContentComponent extends LitElement {
         }
 
         .img-container {
-            width: 20%;
+            width: 10%;
             display: flex;
             justify-content: center;
         }
@@ -30,7 +30,8 @@ export class ContentComponent extends LitElement {
             flex-direction: column;
             justify-content: space-between;
             border-bottom: solid 1px grey;
-            margin: 0 1.5%;
+            margin: 0;
+            width: 90%;
         }
 
         .title {
@@ -44,9 +45,6 @@ export class ContentComponent extends LitElement {
         }
 
         .tags {
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
             margin-left: 11.5%;
             margin-top: 2%;
         }
