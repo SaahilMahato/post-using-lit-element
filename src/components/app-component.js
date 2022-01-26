@@ -12,6 +12,9 @@ export class AppComponent extends LitElement {
         }
     `;
 
+    /** 
+     * Constructor of the Class.
+     */
     constructor() {
         super();
 
@@ -78,6 +81,11 @@ export class AppComponent extends LitElement {
         ];
     }
 
+    /**
+     * Renders the component.
+     * 
+     * @returns {HTMLElement} - The HTML of the component to be rendered. 
+     */
     render() {
         return html`
             <div class="container">

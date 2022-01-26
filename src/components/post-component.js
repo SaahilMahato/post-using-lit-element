@@ -24,22 +24,34 @@ export class PostComponent extends LitElement {
         }
     `;
 
+    /**
+     * Contructor of the class.
+     */
     constructor() {
         super();
 
+        // properties for header
         this.status = "";
         this.userName = "";
         this.postedTime = "";
         this.profilePictureUrl = "";
+
         this.viewerProfilePicUrls = [];
 
-        this.numberOfAnswers = 0;
+        // properties for content
+        this.tags = [];
 
         this.title = "";
         this.content = "";
-        this.tags = [];
+
+        this.numberOfAnswers = 0;        
     }
 
+    /**
+     * Renders the component.
+     * 
+     * @returns {HTMLElement} - The HTML of the component to be rendered. 
+     */
     render() {
         return html`
             <div class="post-wrapper">

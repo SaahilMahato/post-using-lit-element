@@ -22,12 +22,20 @@ export class TagComponent extends LitElement {
         }
     `;
 
+    /**
+     * Contructor of the class.
+     */
     constructor() {
         super();
 
         this.text = "";
     }
 
+    /**
+     * Renders the component.
+     * 
+     * @returns {HTMLElement} - The HTML of the component to be rendered. 
+     */
     render() {
         return html`
             <div class="tag">

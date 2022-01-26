@@ -50,6 +50,9 @@ export class ContentComponent extends LitElement {
         }
     `;
 
+    /**
+     * Contructor of the class.
+     */
     constructor() {
         super();
 
@@ -58,6 +61,11 @@ export class ContentComponent extends LitElement {
         this.tags = [];
     }
 
+    /**
+     * Renders the component.
+     * 
+     * @returns {HTMLElement} - The HTML of the component to be rendered. 
+     */
     render() {
         return html`
             <div class="content-wrapper">

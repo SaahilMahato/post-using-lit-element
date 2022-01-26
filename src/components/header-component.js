@@ -96,17 +96,27 @@ export class HeaderComponent extends LitElement {
         }
     `;
 
+    /**
+     * Contructor of the class.
+     */
     constructor() {
         super();
 
         this.status = "";
         this.userName = "";
         this.postedTime = "";
-        this.numberOfAnswers = 0;
         this.profilePictureUrl = "";
+
+        this.numberOfAnswers = 0;
+        
         this.viewerProfilePicUrls = [];
     }
 
+    /**
+     * Renders the component.
+     * 
+     * @returns {HTMLElement} - The HTML of the component to be rendered. 
+     */
     render() {
         return html`
             <div class="header">
